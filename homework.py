@@ -5,9 +5,9 @@ from dataclasses import dataclass, asdict
 class InfoMessage:
     """Информационное сообщение о тренировке."""
     training_type: str
-    duration: float 
-    distance: float 
-    speed: float 
+    duration: float
+    distance: float
+    speed: float
     calories: float
     INFO_MESSAGE: str = (
         'Тип тренировки: {training_type}; '
@@ -49,7 +49,7 @@ class Training:
 
     def get_spent_calories(self) -> float:
         """Получить количество затраченных калорий."""
-        raise NotImplementedError('Method has not been overriden!') 
+        raise NotImplementedError('Method has not been overriden!')
 
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
@@ -144,9 +144,6 @@ def read_package(workout_type: str, data: list) -> Training:
     if workout_type in training_codes:
         return training_codes[workout_type](*data)
     raise ValueError('Unknown workout type')
-
-        
-  
 
 
 def main(training: Training) -> None:
